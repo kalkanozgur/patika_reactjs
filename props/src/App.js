@@ -41,6 +41,10 @@ function App() {
 				isLoggedIn={true}
 				age={30}
 				friends={friends}
+				adress={{
+					title: "Antalya Ev",
+					zip: "07070",
+				}}
 			/>
 		</div>
 	);
