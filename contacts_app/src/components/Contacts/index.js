@@ -3,10 +3,14 @@ import List from "./List";
 import Form from "./Form";
 
 function Contacts() {
-	const [contacts, setContacts] = useState([]);
+	const [contacts, setContacts] = useState([
+		{ fullname: "Ahmet", phone_number: "123456789" },
+		{ fullname: "Cem", phone_number: "14124512" },
+		{ fullname: "Düşün", phone_number: "43262346" },
+		{ fullname: "Onur", phone_number: "2141245" },
+	]);
 	useEffect(() => {
 		//sdaf
-		console.log(contacts);
 	}, [contacts]);
 	return (
 		<div>
