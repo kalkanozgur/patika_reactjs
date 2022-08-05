@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import List from "./List";
 import Form from "./Form";
+import "./styles.css";
 
 function Contacts() {
 	const [contacts, setContacts] = useState([
@@ -9,11 +10,13 @@ function Contacts() {
 		{ fullname: "Düşün", phone_number: "43262346" },
 		{ fullname: "Onur", phone_number: "2141245" },
 	]);
-	useEffect(() => {
-		//sdaf
-	}, [contacts]);
+	// useEffect(() => {
+	// 	//sdaf
+	// 	console.log(contacts);
+	// }, [contacts]);
 	return (
-		<div>
+		<div id="container">
+			<h1>Contacts</h1>
 			<List contacts={contacts} />
 			<Form addContact={setContacts} contacts={contacts} />
 		</div>

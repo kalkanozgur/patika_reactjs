@@ -42,7 +42,7 @@ function Form({ addContact, contacts }) {
 					value={form.phone_number}
 				/>
 			</div>
-			<div>
+			<div className="btn">
 				<button>Add</button>
 			</div>
 		</form>
