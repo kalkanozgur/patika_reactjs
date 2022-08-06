@@ -7,7 +7,7 @@ function Invoices() {
 	let invoice = getInvoice(parseInt(params.invoiceId, 10));
 	return (
 		<div style={{ display: "flex" }}>
-			<nav
+			{/* <nav
 				style={{
 					borderRight: "solid 1px",
 					padding: "1rem",
@@ -23,14 +23,16 @@ function Invoices() {
 					</Link>
 				))}
 			</nav>
-			<Outlet />
-			<div style={{ padding: "1rem" }}>
-				<h2>Total Due: {invoice.amount}</h2>
-				<p>
-					{invoice.name}: {invoice.number}
-				</p>
-				<p>Due Date: {invoice.due}</p>
-			</div>
+			<Outlet /> */}
+			<main>
+				<div style={{ padding: "1rem" }}>
+					<h2>Total Due: {invoice.amount}</h2>
+					<p>
+						{invoice.name}: {invoice.number}
+					</p>
+					<p>Due Date: {invoice.due}</p>
+				</div>
+			</main>
 		</div>
 	);
 }
