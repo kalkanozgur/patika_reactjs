@@ -1,24 +1,61 @@
-import React from "react";
+function Footer({ todos, setTodos, status, setStatus }) {
+	const unCompleted = todos.filter((todo) => todo.completed === false);
+	const completed = todos.filter((todo) => todo.completed === true);
 
-function Footer() {
+	const clearCompleted = (e) => {
+		e.preventDefault();
+		setTodos(todos.filter((todo) => todo.completed === false));
+	};
+
+	const clickStyle = (e) => {
+		setStatus(e.target.id);
+	};
 	return (
-		<div>
+		<footer className="footer">
+			{/* <!-- This should be `0 items left` by default --> */}
 			<span className="todo-count">
-				<strong>2</strong>" items left "
+				<strong>{unCompleted.length} </strong>
+				items left
 			</span>
+
 			<ul className="filters">
-				<li className="selected">
-					<a href="#/">All</a>
+				<li>
+					<label
+						onClick={clickStyle}
+						className={status === "all" ? "selected" : ""}
+						id="all"
+					>
+						All
+					</label>
 				</li>
 				<li>
-					<a href="#/">Active</a>
+					<label
+						onClick={clickStyle}
+						className={status === "active" ? "selected" : ""}
+						id="active"
+					>
+						Active
+					</label>
 				</li>
 				<li>
-					<a href="#/">Complated</a>
+					<label
+						onClick={clickStyle}
+						className={status === "completed" ? "selected" : ""}
+						id="completed"
+					>
+						Completed
+					</label>
 				</li>
 			</ul>
-			<button className="clear-complated">Clear complated</button>
-		</div>
+
+			{/* <!-- Hidden if no completed items are left ↓ --> */}
+			<button
+				className={completed === 0 ? "hidden" : "clear-completed"}
+				onClick={clearCompleted}
+			>
+				Clear completed
+			</button>
+		</footer>
 	);
 }
 
