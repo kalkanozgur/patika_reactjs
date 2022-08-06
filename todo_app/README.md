@@ -4,4 +4,4 @@ Basic ToDo App using ReactJs
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm i -y && npm start`
