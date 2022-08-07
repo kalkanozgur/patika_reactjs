@@ -2,15 +2,15 @@ import { useContext } from "react";
 
 import ThemeContext from "../context/ThemeContext";
 
-function Button({}) {
+function Header() {
 	const { theme, setTheme } = useContext(ThemeContext);
 	return (
 		<div>
-			Active Theme: {theme}
+			Header Active Theme {theme}
 			<br />
 			<button
 				onClick={() => {
-					setTheme(theme === "light" ? "dark" : "light");
+					setTheme(theme === "dark" ? "light" : "dark");
 				}}
 			>
 				Toggle Theme
@@ -19,4 +19,4 @@ function Button({}) {
 	);
 }
 
-export default Button;
+export default Header;
