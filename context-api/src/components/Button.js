@@ -1,6 +1,6 @@
 import { useTheme } from "../context/ThemeContext";
 
-function Button({}) {
+function Button() {
 	const { theme, setTheme } = useTheme();
 	return (
 		<div>
